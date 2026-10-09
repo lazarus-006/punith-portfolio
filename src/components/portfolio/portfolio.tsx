@@ -52,7 +52,7 @@ export function Portfolio() {
   const reduced = useAccessibleMotion();
   const [intro, setIntro] = useState(true); const [menu, setMenu] = useState(false); const [active, setActive] = useState(''); const [scrolled, setScrolled] = useState(false);
   const { scrollY } = useScroll(); const artY = useTransform(scrollY, [0, 900], [0, 110]);
-  useEffect(() => { const timer = window.setTimeout(() => setIntro(false), reduced ? 0 : 900); return () => window.clearTimeout(timer); }, [reduced]);
+  useEffect(() => { const timer = window.setTimeout(() => setIntro(false), reduced ? 0 : 1200); return () => window.clearTimeout(timer); }, [reduced]);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 25); onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
     const observer = new IntersectionObserver(entries => { for (const entry of entries) if (entry.isIntersecting) setActive(entry.target.id); }, { rootMargin: '-20% 0px -50% 0px' });
@@ -61,7 +61,7 @@ export function Portfolio() {
   }, []);
   useEffect(() => { const close = (e: KeyboardEvent) => { if (e.key === 'Escape') setMenu(false); }; window.addEventListener('keydown', close); return () => window.removeEventListener('keydown', close); }, []);
   return <>
-    <AnimatePresence>{intro && !reduced && <motion.div className="intro" aria-hidden="true" exit={{ opacity: 0 }} transition={{ duration: .45 }}><motion.div className="monogram" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>PKM<span>.</span></motion.div></motion.div>}</AnimatePresence>
+    <AnimatePresence>{intro && !reduced && <motion.div className="intro" aria-hidden="true" exit={{ opacity: 0 }} transition={{ duration: .45 }}><div className="intro-text">Welcome to my world<span>.</span></div></motion.div>}</AnimatePresence>
     <Cursor />
     <header className={`navbar ${scrolled ? 'scrolled' : ''}`}><div className="shell nav-inner">
       <a className="monogram" href="#home" aria-label="Punith Kumar M home">PKM<span>.</span></a>
