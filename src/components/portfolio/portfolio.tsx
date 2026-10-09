@@ -52,7 +52,7 @@ export function Portfolio() {
   const reduced = useAccessibleMotion();
   const [intro, setIntro] = useState(true); const [menu, setMenu] = useState(false); const [active, setActive] = useState(''); const [scrolled, setScrolled] = useState(false);
   const { scrollY } = useScroll(); const artY = useTransform(scrollY, [0, 900], [0, 110]);
-  useEffect(() => { const timer = window.setTimeout(() => setIntro(false), reduced ? 0 : 900); return () => window.clearTimeout(timer); }, [reduced]);
+  useEffect(() => { const timer = window.setTimeout(() => setIntro(false), reduced ? 0 : 1200); return () => window.clearTimeout(timer); }, [reduced]);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 25); onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
     const observer = new IntersectionObserver(entries => { for (const entry of entries) if (entry.isIntersecting) setActive(entry.target.id); }, { rootMargin: '-20% 0px -50% 0px' });
