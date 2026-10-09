@@ -58,6 +58,7 @@ a:focus-visible { outline: 2px solid var(--primary); outline-offset: 6px; }
 .nav-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .monogram { font: 700 25px var(--font-display); display: inline-flex; align-items: baseline; gap: 2px; }
 .monogram span { color: var(--primary); }
+.brand-name { font-size: 19px; font-weight: 600; letter-spacing: -.01em; white-space: nowrap; }
 .nav-links { display: flex; gap: 30px; align-items: center; }
 .nav-links a { font-size: 13px; color: var(--muted-foreground); transition: color .2s; position: relative; }
 .nav-links a:hover, .nav-links a.active { color: var(--foreground); }
