@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+# Punith Kumar M — Developer Portfolio
 
 This project was built with [Lovable](https://lovable.dev).
 
@@ -27,3 +27,13 @@ npm run dev
 - TypeScript
 - React
 - Tailwind CSS
+- Motion for React
+- Lucide icons
+
+## Run and verify
+
+Use `bun install` and `bun run dev` to run the site locally. `bun run build` creates a production build, and `bun run preview` serves it. Run `bun run test` for the project's tests.
+
+The portfolio lives at `/` with in-page navigation. Presentation is in `src/components/portfolio/portfolio.tsx`, design tokens are in `src/styles.css`, and page metadata is in `src/routes/index.tsx`.
+
+Weather Now and Task Manager are explicitly unconfirmed project slots, not functioning demos. Skill groups describe learning areas rather than asserting specific technology proficiency. Contact opens the supplied LinkedIn profile; no email address or fake form is used.
