@@ -64,7 +64,7 @@ export function Portfolio() {
     <AnimatePresence>{intro && !reduced && <motion.div className="intro" aria-hidden="true" exit={{ opacity: 0 }} transition={{ duration: .45 }}><div className="intro-text">Welcome to my world<span>.</span></div></motion.div>}</AnimatePresence>
     <Cursor />
     <header className={`navbar ${scrolled ? 'scrolled' : ''}`}><div className="shell nav-inner">
-      <a className="monogram" href="#home" aria-label="Punith Kumar M home">PKM<span>.</span></a>
+      <a className="monogram brand-name" href="#home" aria-label="Punith Kumar M home">Punith Kumar<span>.</span></a>
       <nav aria-label="Main navigation" id="main-navigation" className={`nav-links ${menu ? 'mobile-open' : ''}`}>{navigation.map(name => <a key={name} href={`#${name.toLowerCase()}`} className={active === name.toLowerCase() ? 'active' : ''} aria-current={active === name.toLowerCase() ? 'location' : undefined} onClick={() => setMenu(false)}>{name}</a>)}</nav>
       <div className="nav-actions"><Button asChild variant="outline" className="nav-contact"><a href="#contact">Let’s talk <ArrowUpRight /></a></Button><Button variant="ghost" size="icon" className="mobile-menu-button" aria-label={menu ? 'Close navigation' : 'Open navigation'} aria-expanded={menu} aria-controls="main-navigation" onClick={() => setMenu(!menu)}>{menu ? <X /> : <Menu />}</Button></div>
     </div></header>
