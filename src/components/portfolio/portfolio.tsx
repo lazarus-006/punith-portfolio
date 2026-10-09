@@ -61,7 +61,7 @@ export function Portfolio() {
   }, []);
   useEffect(() => { const close = (e: KeyboardEvent) => { if (e.key === 'Escape') setMenu(false); }; window.addEventListener('keydown', close); return () => window.removeEventListener('keydown', close); }, []);
   return <>
-    <AnimatePresence>{intro && !reduced && <motion.div className="intro" aria-hidden="true" exit={{ opacity: 0 }} transition={{ duration: .45 }}><motion.div className="monogram" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>PKM<span>.</span></motion.div></motion.div>}</AnimatePresence>
+    <AnimatePresence>{intro && !reduced && <motion.div className="intro" aria-hidden="true" exit={{ opacity: 0 }} transition={{ duration: .45 }}><motion.div className="intro-text" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>Welcome to my world<span>.</span></motion.div></motion.div>}</AnimatePresence>
     <Cursor />
     <header className={`navbar ${scrolled ? 'scrolled' : ''}`}><div className="shell nav-inner">
       <a className="monogram" href="#home" aria-label="Punith Kumar M home">PKM<span>.</span></a>
